@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struttura HTML con Titoli e Fiori</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/leyton" rel="stylesheet">
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/leyton');
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: black;
+        }
+
+        .hide {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 2s, transform 3s;
+        }
+
+        #main-title {
+            margin-top: 50px;
+            font-size: 36px;
+            font-weight: 400;
+            color: white;
+            font-family: 'Leyton', sans-serif;
+        }
+
+        .sub-titles {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .sub-title {
+            margin: 0 20px;
+            font-size: 24px;
+            color: white;
+            font-family: "Libre Baskerville", serif;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        .img-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .flowers {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+
+
+
+        @media screen and (max-width: 768px) {
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .sub-titles {
+                flex-direction: column;
+                gap: 50px;
+                margin-top: 35px;
+                font-family: "Libre Baskerville", serif;
+                font-weight: 400;
+                text-transform: uppercase;
+            }
+
+            .flowers img {
+
+                height: 300px;
+            }
+
+            .flowers.show img {
+
+                opacity: 1;
+            }
+
+            .titolo-container {
+                display: flex;
+                flex-direction: column;
+                z-index: 2;
+                position: relative;
+            }
+
+            #main-title {
+                margin-top: 158px;
+                font-size: 62px;
+                font-weight: 400;
+                color: white;
+                font-family: 'Leyton', sans-serif;
+            }
+
+            .img-container {
+                position: absolute;
+                display: flex;
+                width: 100%;
+                z-index: 1;
+            }
+
+            .flowers {
+                top: 0;
+                bottom: 0;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .text-info {
+                margin-top: 35px;
+            }
+
+            .left-flowers {
+                left: -50%;
+            }
+
+            .left-flowers.show {
+                transform: translateX(50%);
+            }
+
+            .right-flowers {
+                right: -50%;
+            }
+
+            .right-flowers.show {
+                transform: translateX(-50%);
+            }
+
+            .info-container{
+                margin-bottom: 50px;
+                margin-top: 100px;
+            }
+
+            .link-info{
+                font-family: 'Leyton', sans-serif;
+                font-size: 32px;
+                text-decoration: underline;
+                color: white;
+            }
+
+            .link-info a{
+                
+                text-decoration: underline;
+                color: white;
+            }
+
+            .link-info a::after{
+                content: '>';
+                display: inline-block;
+                margin-left: 8px;
+
+            }
+
+            .transform{
+                text-transform: unset !important;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="img-container">
+            <div id="left-flowers" class="flowers left-flowers">
+                <img src="fiorisx.png" alt="Fiori sinistra">
+            </div>
+            <div id="right-flowers" class="flowers right-flowers">
+                <img src="fioridx.png" alt="Fiori destra">
+            </div>
+        </div>
+        <div class="titolo-container">
+            <h1 id="main-title" class="hide">PAREA</h1>
+            <div class="sub-titles hide" id="sub-title">
+                <div class="sub-title">Dj Set</div>
+                <div class="sub-title">Close membership</div>
+                <div class="sub-title">Open Bar</div>
+            </div>
+        </div>
+
+        <div class="info-container">
+            <div class="text-info">
+                <div class="sub-title transform hide">Let's meet up in one of the most iconic places of our home to dance under
+                    the stars on a midsummer night</div>
+            </div>
+
+            <div class="text-info">
+                <div class="sub-title hide">- Location</div>
+            </div>
+
+            <div class="link-info hide">
+                <a href="">View on google maps</a>
+            </div>
+
+            <div class="text-info">
+                <div class="sub-title hide">- Start:</div>
+            </div>
+
+            <div class="hp-info">
+                <div class="sub-title transform hide">11:00 - till sunrise</div>
+            </div>
+
+            <div class="text-info">
+                <div class="sub-title hide">- line-up:</div>
+            </div>
+            <div class="hp-info">
+                <div class="sub-title transform hide">Sirada - mm53 - Steckhini - Synapsis </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            document.querySelectorAll('.left-flowers, .right-flowers').forEach(function (element) {
+                element.classList.add('show');
+            });
+
+            // Aggiungi la classe show ai titoli dopo un breve ritardo
+            setTimeout(function () {
+                document.querySelectorAll('.hide').forEach(function (element) {
+                    element.classList.add('show');
+                });
+            }, 100);
+        }
+    </script>
+</body>
+
+</html>
