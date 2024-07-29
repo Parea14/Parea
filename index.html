@@ -21,7 +21,7 @@
             background-image: url(emperor.png);
             background-size: contain;
             background-repeat: no-repeat;
-            
+
         }
 
         .hide {
@@ -155,34 +155,74 @@
                 transform: translateX(-40%);
             }
 
-            .info-container{
+            .info-container {
                 margin-bottom: 50px;
                 margin-top: 100px;
             }
 
-            .link-info{
+            .link-info {
                 font-family: 'Leyton', sans-serif;
                 font-size: 32px;
                 text-decoration: underline;
                 color: white;
             }
 
-            .link-info a{
-                
+            .link-info a {
+
                 text-decoration: underline;
                 color: white;
             }
 
-            .link-info a::after{
+            .link-info a::after {
                 content: '>';
                 display: inline-block;
                 margin-left: 8px;
 
             }
 
-            .transform{
+            .transform {
                 text-transform: unset !important;
             }
+
+            .contatti-container {
+                display: flex;
+                flex-direction: column;
+                margin-top: 100px;
+                margin-bottom: 100px;
+            }
+
+            .titolo-contatti {
+                color: white;
+                font-family: "Libre Baskerville", serif;
+                font-size: 38px;
+            }
+
+            .nomi-container {
+                display: flex;
+                flex-direction: column;
+                color: white;
+                font-family: "Libre Baskerville", serif;
+                font-size: 32px;
+                margin-top: 15px;
+                gap: 32px;
+            }
+
+            .nomi-container a {
+                color: white;
+                font-family: "Libre Baskerville", serif;
+                font-size: 28px;
+                
+            }
+
+            .registration {
+                margin-top: 88px;
+                font-size: 32px;
+                text-transform: uppercase;
+                font-family: "Libre Baskerville", serif;
+
+            }
+
+
 
 
         }
@@ -209,9 +249,14 @@
             </div>
         </div>
 
+        <div class="link-info registration hide">
+            <a href="">Registration</a>
+        </div>
+
         <div class="info-container">
             <div class="text-info">
-                <div class="sub-title transform hide">Let's meet up in one of the most iconic places of our home to dance under
+                <div class="sub-title transform hide">Let's meet up in one of the most iconic places of our home to
+                    dance under
                     the stars on a midsummer night</div>
             </div>
 
@@ -220,7 +265,7 @@
             </div>
 
             <div class="link-info hide">
-                <a href="">View on google maps</a>
+                <a href="https://www.google.it/maps/place/Presepe+vivente+di+Tricase/@39.9234194,18.3473869,17z/data=!3m1!4b1!4m6!3m5!1s0x13440d713a71b7c9:0x6ae8d5feaccaf7df!8m2!3d39.9234153!4d18.3499618!16s%2Fg%2F11k4fs2t3_?entry=ttu">View on google maps</a>
             </div>
 
             <div class="text-info">
@@ -228,7 +273,7 @@
             </div>
 
             <div class="hp-info">
-                <div class="sub-title transform hide">11:00 - till sunrise</div>
+                <div class="sub-title transform hide">11:00 p.m.</p> - till sunrise</div>
             </div>
 
             <div class="text-info">
@@ -238,6 +283,20 @@
                 <div class="sub-title transform hide">Sirada - mm53 - Steckhini - Synapsis </div>
             </div>
 
+        </div>
+
+        <div class="contatti-container">
+            <div class="titolo-contatti">Contact us</div>
+
+            <div class="nomi-container">
+                <div><a href="https://www.instagram.com/experiences.jh/">@Simone Ingletti</a></div>
+                <div><a href="https://www.instagram.com/_matt.jf_/">@Matteo Esposito</a></div>
+                <div><a href="https://www.instagram.com/pierosbt/">@Pierpaolo Sabato</a></div>
+                <div><a href="https://www.instagram.com/martimaranjio/">@Martina Marangio</a></div>
+                <div><a href="https://www.instagram.com/sirada_______/">@Andrea Dell'Abate</a></div>
+                <div><a href="https://www.instagram.com/g_shanks/">@Gabriele Maggio</a></div>
+
+            </div>
 
         </div>
     </div>
@@ -248,7 +307,7 @@
                 element.classList.add('show');
             });
 
-            // Aggiungi la classe show ai titoli dopo un breve ritardo
+            
             setTimeout(function () {
                 document.querySelectorAll('.hide').forEach(function (element) {
                     element.classList.add('show');
